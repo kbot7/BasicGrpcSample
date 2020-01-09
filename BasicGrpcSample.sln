@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicGrpcSample.Server", "B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicGrpcSample.ConsoleClient", "BasicGrpcSample.ConsoleClient\BasicGrpcSample.ConsoleClient.csproj", "{FA136373-C912-417A-9C87-7DDFC41D8A69}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicGrpcSample.WebClient", "BasicGrpcSample.WebClient\BasicGrpcSample.WebClient.csproj", "{87BC5FB1-E0BD-444E-AD10-489A36F461AD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{FA136373-C912-417A-9C87-7DDFC41D8A69}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA136373-C912-417A-9C87-7DDFC41D8A69}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA136373-C912-417A-9C87-7DDFC41D8A69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87BC5FB1-E0BD-444E-AD10-489A36F461AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87BC5FB1-E0BD-444E-AD10-489A36F461AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87BC5FB1-E0BD-444E-AD10-489A36F461AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87BC5FB1-E0BD-444E-AD10-489A36F461AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
