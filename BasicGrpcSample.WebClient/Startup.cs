@@ -24,6 +24,11 @@ namespace BasicGrpcSample.WebClient
 		public void ConfigureServices(IServiceCollection services)
 		{
 			services.AddControllersWithViews();
+			services.AddGrpc();
+			services.AddGrpcClient<Server.Greeter.GreeterClient>(o =>
+			{
+				o.Address = new Uri(Configuration.GetValue<string>("Services:GrpcServer"));
+			});
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

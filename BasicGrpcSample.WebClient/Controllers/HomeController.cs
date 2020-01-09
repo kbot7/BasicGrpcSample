@@ -12,15 +12,18 @@ namespace BasicGrpcSample.WebClient.Controllers
 	public class HomeController : Controller
 	{
 		private readonly ILogger<HomeController> _logger;
+		private readonly Server.Greeter.GreeterClient _greeter;
 
-		public HomeController(ILogger<HomeController> logger)
+		public HomeController(ILogger<HomeController> logger, Server.Greeter.GreeterClient greeter)
 		{
 			_logger = logger;
+			_greeter = greeter;
 		}
 
-		public IActionResult Index()
+		public async Task<IActionResult> IndexAsync()
 		{
-			return View();
+			var response = await _greeter.SayHelloAsync(new Server.HelloRequest { Name = "Kevin" });
+			return View(response);
 		}
 
 		public IActionResult Privacy()
