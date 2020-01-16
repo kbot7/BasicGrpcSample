@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<OutputType>Exe</OutputType>
@@ -9,6 +9,12 @@
 		<PackageReference Include="Google.Protobuf" Version="3.11.2" />
 		<PackageReference Include="Grpc.Net.Client" Version="2.26.0" />
 		<PackageReference Include="Grpc.Tools" Version="2.26.0" PrivateAssets="All" />
+		<PackageReference Include="protobuf-net" Version="2.4.4" />
+		<PackageReference Include="protobuf-net.Grpc" Version="1.0.22" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\BasicGrpcSample.Contracts\BasicGrpcSample.Contracts.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

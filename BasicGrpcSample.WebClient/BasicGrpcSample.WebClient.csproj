@@ -12,6 +12,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\BasicGrpcSample.Contracts\BasicGrpcSample.Contracts.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<Protobuf Include="..\BasicGrpcSample.Server\Protos\greet.proto" GrpcServices="Client" />
 	</ItemGroup>
 
