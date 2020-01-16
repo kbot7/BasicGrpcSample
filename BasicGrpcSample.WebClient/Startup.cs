@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Grpc.Core;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -28,6 +29,7 @@ namespace BasicGrpcSample.WebClient
 			services.AddGrpcClient<Server.Greeter.GreeterClient>(o =>
 			{
 				o.Address = new Uri(Configuration.GetValue<string>("Services:GrpcServer"));
+				o.ChannelOptionsActions.Add(opt => opt.Credentials = ChannelCredentials.Insecure);
 			});
 		}
 

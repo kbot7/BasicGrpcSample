@@ -1,4 +1,5 @@
-﻿using Grpc.Net.Client;
+﻿using Grpc.Core;
+using Grpc.Net.Client;
 using System;
 using System.Threading.Tasks;
 
@@ -9,7 +10,10 @@ namespace BasicGrpcSample.ConsoleClient
 		static async Task Main(string[] args)
 		{
 			// The port number(5001) must match the port of the gRPC server.
-			using var channel = GrpcChannel.ForAddress("https://localhost:5001");
+			using var channel = GrpcChannel.ForAddress("http://localhost:5001", new GrpcChannelOptions() 
+			{
+				Credentials = ChannelCredentials.Insecure
+			});
 			var client = new Server.Greeter.GreeterClient(channel);
 			var reply = await client.SayHelloAsync(
 							  new Server.HelloRequest { Name = "GreeterClient" });
