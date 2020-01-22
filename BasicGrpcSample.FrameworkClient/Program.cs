@@ -14,7 +14,7 @@ namespace BasicGrpcSample.FrameworkClient
     {
         static async Task Main(string[] args)
         {
-            Channel channel = new Channel("127.0.0.1:5001", ChannelCredentials.Insecure);
+            Channel channel = new Channel("grpc.jonhussdev.com:80", ChannelCredentials.Insecure);
 
             //// Contract-First Greeter
             //var client = new Greeter.GreeterClient(channel);
