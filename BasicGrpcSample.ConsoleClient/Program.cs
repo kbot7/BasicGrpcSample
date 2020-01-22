@@ -12,7 +12,7 @@ namespace BasicGrpcSample.ConsoleClient
 		static async Task Main(string[] args)
 		{
 			// The port number(5001) must match the port of the gRPC server.
-			using var channel = GrpcChannel.ForAddress("http://grpc.jonhussdev.com", new GrpcChannelOptions() 
+			using var channel = GrpcChannel.ForAddress("http://localhost:5001", new GrpcChannelOptions() 
 			{
 				Credentials = ChannelCredentials.Insecure
 			});
