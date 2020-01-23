@@ -13,6 +13,9 @@ namespace BasicGrpcSample.WebClient
 	{
 		public static void Main(string[] args)
 		{
+			// Needed for dev env when TLS is not used
+			AppContext.SetSwitch("System.Net.Http.SocketsHttpHandler.Http2UnencryptedSupport", true);
+
 			CreateHostBuilder(args).Build().Run();
 		}
 

@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace BasicGrpcSample.Contracts
 {
-    [ServiceContract(Name = "Hyper.Calculator")]
+    [ServiceContract(Name = "Calculator")]
     public interface ICalculator
     {
         Task<MultiplyResult> MultiplyAsync(MultiplyRequest request);
