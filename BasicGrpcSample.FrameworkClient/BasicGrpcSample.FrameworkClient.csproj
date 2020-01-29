@@ -2,7 +2,7 @@
   <PropertyGroup>
     <ProjectGuid>{D2B038A3-2A6F-4F54-934C-53E7A2076862}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net472</TargetFramework>
+    <TargetFramework>net48</TargetFramework>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <AssemblyTitle>BasicGrpcSample.FrameworkClient</AssemblyTitle>
     <Product>BasicGrpcSample.FrameworkClient</Product>
@@ -28,6 +28,7 @@
     <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="4.5.2" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BasicGrpcSample.ClientLib\BasicGrpcSample.ClientLib.csproj" />
     <ProjectReference Include="..\BasicGrpcSample.Contracts\BasicGrpcSample.Contracts.csproj" />
   </ItemGroup>
   <ItemGroup>

@@ -19,6 +19,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\BasicGrpcSample.ClientLib\BasicGrpcSample.ClientLib.csproj" />
 	  <ProjectReference Include="..\BasicGrpcSample.Contracts\BasicGrpcSample.Contracts.csproj" />
 	</ItemGroup>
 
