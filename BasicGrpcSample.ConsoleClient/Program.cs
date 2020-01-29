@@ -36,7 +36,17 @@ namespace BasicGrpcSample.ConsoleClient
 
 			// Code-First - Order Service
 			var orderSvc = grpcFactory.GetClient<IOrderService>();
-			var result = await orderSvc.CreateOrderAsync(new CreateOrderRequest() { CustomerId = "123", DateTimePlaced = DateTime.UtcNow, Skus = new List<string> { "a", "b" } });
+			var result = await orderSvc.CreateOrderAsync(new CreateOrderRequest() 
+			{ 
+				Customer = new Customer 
+				{
+					FirstName = "John",
+					LastName = "Doe",
+					DateOfBirth = DateTime.UtcNow
+				}, 
+				DateTimePlaced = DateTime.UtcNow, 
+				Skus = new List<string> { "a", "b" } 
+			});
 			Console.WriteLine(JsonConvert.SerializeObject(result));
 
 			Console.WriteLine("Press any key to exit...");

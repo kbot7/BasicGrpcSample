@@ -11,7 +11,7 @@ namespace BasicGrpcSample.Server.Services
         {
             var order = new Order
             {
-                CustomerId = request.CustomerId,
+                Customer = request.Customer,
                 DateTimePlaced = request.DateTimePlaced,
                 Skus = request.Skus
             };
@@ -23,7 +23,12 @@ namespace BasicGrpcSample.Server.Services
             var order = new Order
             {
                 OrderId = request.OrderId,
-                CustomerId = "cust123",
+                Customer = new Customer 
+                {
+                    FirstName = "John",
+                    LastName = "Doe",
+                    DateOfBirth = DateTime.UtcNow
+                },
                 DateTimePlaced = DateTime.Now,
                 Skus = new List<string> { "a1", "a2" }
             };
@@ -38,7 +43,12 @@ namespace BasicGrpcSample.Server.Services
                 orders.Add(new Order
                 {
                     OrderId = orderId,
-                    CustomerId = "cust123",
+                    Customer = new Customer
+                    {
+                        FirstName = "John",
+                        LastName = "Doe",
+                        DateOfBirth = DateTime.UtcNow
+                    },
                     DateTimePlaced = DateTime.Now,
                     Skus = new List<string> { "a1", "a2" }
                 });

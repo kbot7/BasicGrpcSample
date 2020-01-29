@@ -1,17 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 using System.Runtime.Serialization;
 
 namespace BasicGrpcSample.Contracts
 {
     [DataContract]
-    public class CreateOrderRequest
+    public class Customer
     {
         [DataMember(Order = 1)]
-        public Customer Customer { get; set; }
+        public string FirstName { get; set; }
         [DataMember(Order = 2)]
-        public DateTime DateTimePlaced { get; set; }
+        public string LastName { get; set; }
         [DataMember(Order = 3)]
-        public List<string> Skus { get; set; } = new List<string>();
+        public DateTime DateOfBirth { get; set; }
     }
 }

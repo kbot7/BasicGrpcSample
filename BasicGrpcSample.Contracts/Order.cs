@@ -10,7 +10,7 @@ namespace BasicGrpcSample.Contracts
         [DataMember(Order = 1)]
         public string OrderId { get; set; }
         [DataMember(Order = 2)]
-        public string CustomerId { get; set; }
+        public Customer Customer { get; set; }
         [DataMember(Order = 3)]
         public DateTime DateTimePlaced { get; set; }
         [DataMember(Order = 4)]
