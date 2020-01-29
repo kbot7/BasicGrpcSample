@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option csharp_namespace = "BasicGrpcSample.Protos.Product";
+import "google/protobuf/Timestamp.proto";
+
+package demo.products;
+
+service ProductService {
+  rpc GetProduct (ProductRequest) returns (Product);
+}
+
+message ProductRequest {
+  string sku = 1;
+}
+
+message Product {
+  string Name = 1;
+  google.protobuf.Timestamp DateAdded = 3;
+}

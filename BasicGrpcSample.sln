@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BasicGrpcSample.FrameworkCl
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BasicGrpcSample.Contracts", "BasicGrpcSample.Contracts\BasicGrpcSample.Contracts.csproj", "{42FDF594-8933-4898-87E6-DA735273991B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicGrpcSample.ClientLib", "BasicGrpcSample.ClientLib\BasicGrpcSample.ClientLib.csproj", "{4013389D-D190-4E2E-902E-890588770D97}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BasicGrpcSample.ClientLib", "BasicGrpcSample.ClientLib\BasicGrpcSample.ClientLib.csproj", "{4013389D-D190-4E2E-902E-890588770D97}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

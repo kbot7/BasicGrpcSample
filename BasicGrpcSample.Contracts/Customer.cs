@@ -14,5 +14,7 @@ namespace BasicGrpcSample.Contracts
         public string LastName { get; set; }
         [DataMember(Order = 3)]
         public DateTime DateOfBirth { get; set; }
+        [DataMember(Order = 4)]
+        public IEnumerable<Order> Orders { get; set; }
     }
 }

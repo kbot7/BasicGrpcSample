@@ -20,15 +20,27 @@ namespace BasicGrpcSample.Server.Services
 
         public Task<Order> GetOrderAsync(GetOrderRequest request)
         {
+            // Create customer with circular reference
+            var cust = new Customer
+            {
+                FirstName = "John",
+                LastName = "Doe",
+                DateOfBirth = DateTime.UtcNow
+            };
+            cust.Orders = new List<Order>
+            {
+                new Order
+                {
+                    OrderId = "abc123",
+                    DateTimePlaced = DateTime.UtcNow,
+                    Customer = cust,
+                }
+            };
+
             var order = new Order
             {
                 OrderId = request.OrderId,
-                Customer = new Customer 
-                {
-                    FirstName = "John",
-                    LastName = "Doe",
-                    DateOfBirth = DateTime.UtcNow
-                },
+                Customer = cust,
                 DateTimePlaced = DateTime.Now,
                 Skus = new List<string> { "a1", "a2" }
             };
