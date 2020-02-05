@@ -37,6 +37,7 @@ namespace BasicGrpcSample.Server
 				endpoints.MapGrpcService<GreeterService>();
 				endpoints.MapGrpcService<CalculatorService>();
 				endpoints.MapGrpcService<OrderService>();
+				endpoints.MapGrpcService<SyncOrderService>();
 
 				endpoints.MapGet("/", async context =>
 				{

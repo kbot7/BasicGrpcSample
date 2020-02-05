@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 
 namespace BasicGrpcSample.Contracts
 {
+
     [ServiceContract(Name = "OrderService")]
     public interface IOrderService
     {
