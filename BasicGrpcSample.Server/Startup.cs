@@ -32,6 +32,8 @@ namespace BasicGrpcSample.Server
 
 			app.UseRouting();
 
+			app.UseMiddleware<CustomMiddleware>();
+
 			app.UseEndpoints(endpoints =>
 			{
 				endpoints.MapGrpcService<GreeterService>();
@@ -44,6 +46,23 @@ namespace BasicGrpcSample.Server
 					await context.Response.WriteAsync("Communication with gRPC endpoints must be made through a gRPC client. To learn how to create a client, visit: https://go.microsoft.com/fwlink/?linkid=2086909");
 				});
 			});
+
+			// Some middleware
+		}
+	}
+
+	public class CustomMiddleware
+	{
+		private readonly RequestDelegate _next;
+
+		public CustomMiddleware(RequestDelegate next)
+		{
+			_next = next;
+		}
+
+		public async Task Invoke(HttpContext httpContext)
+		{
+			await _next(httpContext);
 		}
 	}
 }
